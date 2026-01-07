@@ -190,7 +190,7 @@
             background-color: rgba(255, 255, 255, 0.1);
         }
         
-        /* Enhanced Hero Section for Mobile */
+        /* Enhanced Hero Section for Mobile - FIXED for iOS */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
                         url('cover2.jpg');
@@ -204,6 +204,10 @@
             display: flex;
             align-items: center;
             position: relative;
+            /* iOS compatibility */
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
         }
         
         .hero::before {
@@ -1309,6 +1313,16 @@
                 z-index: 1001;
             }
             
+            /* CRITICAL FIX: Mobile background image for iOS */
+            .hero {
+                background-attachment: scroll !important; /* Fix for iOS Safari */
+                background-position: center center;
+                min-height: 80vh;
+                -webkit-background-size: cover !important;
+                -moz-background-size: cover !important;
+                -o-background-size: cover !important;
+            }
+            
             /* Improved touch targets */
             .cta-button {
                 min-height: 52px;
@@ -1531,7 +1545,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - FIXED for mobile background image -->
     <section class="hero" id="home">
         <div class="container">
             <h1>Devenez un <span>Champion</span></h1>
@@ -2348,10 +2362,10 @@
                             <li><strong>Circuit Training</strong> (Coach Hamza)</li>
                             <li><strong>Step</strong> (Coach Khalil)</li>
                             <li><strong>Cross Training</strong> (Coach Hamza)</li>
-                            <li style="color: #ed1f24;"><strong>Aerobics</strong> <span>(Coach Vesna) •</span></li>
-                            <li style="color: #ed1f24;"><strong>Zumba</strong> <span style="color: #ed1f24;">(Coach Vesna) •</span></li>
-                            <li style="color: #ed1f24;"><strong>Danse orientale</strong> <span style="color: #ed1f24;">(Coach Vesna) •</span></li>
-                            <li style="color: #ed1f24;"><strong>Pilates</strong> <span style="color: #ed1f24;">(Coach Vesna) •</span></li>
+                            <li style="color: #ed1f24;"><strong>Aerobics</strong> <span >(Coach Vesna) •</span></li>
+                            <li style="color: #ed1f24;"><strong>Zumba</strong>(Coach Vesna) •</span></li>
+                            <li style="color: #ed1f24;"><strong>Danse Orientale</strong>(Coach Vesna) •</span></li>
+                            <li style="color: #ed1f24;"><strong>Pilates</strong>(Coach Vesna) •  </span></li>
                         </ul>
                     </div>
                 </div>
